@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using BlogCore.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace AppBlogCore_7.Data
@@ -9,5 +10,7 @@ namespace AppBlogCore_7.Data
             : base(options)
         {
         }
+
+        public DbSet<Categoria> Categorias { get; set; }
     }
 }
