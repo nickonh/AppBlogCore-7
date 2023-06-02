@@ -26,7 +26,7 @@ namespace BlogCore.Data.Data.Repository
                 {
                     Text = i.Nombre,
                     Value = i.IdCategoria.ToString()
-                });
+            });
         }
 
         public void Update(Categoria categoria)
