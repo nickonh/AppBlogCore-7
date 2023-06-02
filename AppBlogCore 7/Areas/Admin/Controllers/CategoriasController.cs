@@ -42,9 +42,21 @@ namespace AppBlogCore_7.Areas.Admin.Controllers
             return View(categoria); 
         }
 
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            Categoria categoria = new Categoria();
+            categoria = _containerwork .RCategoria.Get(id);
+            if(categoria == null) 
+            {
+                return NotFound();
+            }
+            return View(categoria);
+        }
+
         #region Llamadas a la API
         [HttpGet]
-        public IActionResult GetAll() 
+        public JsonResult GetAll() 
         {
             return Json(new {data= _containerwork.RCategoria.GetAll()});
         }
